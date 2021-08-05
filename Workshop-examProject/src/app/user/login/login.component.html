@@ -1,0 +1,86 @@
+<form #f="ngForm" (ngSubmit)="submitFormHandler(f.value)">
+    <!-- <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div> --> 
+
+    <div class="container">
+        <label for="email"><b>Email</b></label>
+        <input #userEmail="ngModel" type="text" placeholder="Enter Email" name="email" id="email" ngModel required appEmailValidator>
+        <p *ngIf="userEmail.touched && userEmail.errors?.required" class="error">
+            Email is required!
+        </p>
+        <p *ngIf="userEmail.touched && userEmail.errors?.emailValidator" class="error">
+            Email is not valid!
+        </p>
+
+        <label for="psw"><b>Password</b></label>
+        <input #userPassword="ngModel" type="password" id="password" placeholder="Enter Password" name="psw" ngModel required minlength="4">
+        <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error">
+            Password is required!
+        </p>
+        <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error">
+            Password must be at least 4 characters!
+        </p>
+ 
+        <p *ngIf="errorMessage" class="error">
+            {{errorMessage}}
+        </p>
+
+        <button [disabled]="isLoading || f.invalid">Login</button>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <!-- <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label> -->
+    </div>
+
+    <!-- <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div> -->
+</form>
+
+
+<!-- <form #f="ngForm" class="login" (ngSubmit)="submitFormHandler(f.value)">
+
+    <fieldset>
+        <h2>Login Form</h2>
+
+        <p class="field field-icon">
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <!-- <input #userEmail="ngModel" [class.input-error]="userEmail.touched && !!userEmail.errors" type="text" name="email" id="email"
+                placeholder="john.doe@gmail.com" ngModel required pattern="^[a-zA-Z\.-]{6,}@\w+\.(com|bg)$"> -->
+            <!--<input #userEmail="ngModel" [class.input-error]="userEmail.touched && !!userEmail.errors" type="text"
+                name="email" id="email" placeholder="john.doe@gmail.com" ngModel required appEmailValidator>
+        </p>
+        <p *ngIf="userEmail.touched && userEmail.errors?.required" class="error">
+            Email is required!
+        </p>
+        <p *ngIf="userEmail.touched && userEmail.errors?.emailValidator" class="error">
+            Email is not valid!
+        </p>
+
+        <p class="field field-icon">
+            <label for="password"><span><i class="fas fa-lock"></i></span></label>
+            <input #userPassword="ngModel" [class.input-error]="userPassword.touched && !!userPassword.errors"
+                type="password" name="password" id="password" placeholder="******" ngModel required minlength="4">
+        </p>
+        <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error">
+            Password is required!
+        </p>
+        <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error">
+            Password must be at least 4 characters!
+        </p>
+
+        <p *ngIf="errorMessage" class="error">
+            {{errorMessage}}
+        </p>
+
+        <button [disabled]="isLoading || f.invalid">Login</button>
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <p class="text-center">
+            Have an account?
+            <a routerLink="/user/register">Register</a>
+        </p>
+
+    </fieldset>
+</form> -->
