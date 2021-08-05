@@ -4,6 +4,17 @@
         <p>Please fill in this form to create an account.</p>
         <hr>
 
+        <label for="username"><b>Username</b></label>
+        <input type="text" name="username" id="username" placeholder="Johny" formControlName="username" required>
+
+        <p *ngIf="form.get('username').touched && form.get('username').errors?.required" class=" error">
+            Username is required!
+        </p>
+        <p *ngIf="form.get('username').touched && form.get('username').errors?.minlength" class=" error">
+            Username must be at least 5 characters!
+        </p>
+
+
         <label for="email"><b>Email</b></label>
         <input formControlName="email" type="text" placeholder="Enter Email" name="email" id="email" required>
         <p *ngIf="form.get('email').touched && form.get('email').errors?.required" class="error">
@@ -11,7 +22,8 @@
         </p>
 
         <label for="password"><b>Password</b></label>
-        <input formControlName="password" type="password" placeholder="Enter Password" name="password" id="password" required>
+        <input formControlName="password" type="password" placeholder="Enter Password" name="password" id="password"
+            required>
         <p *ngIf="form.get('password').touched && form.get('password').errors?.required" class="error">
             Password is required!
         </p>
@@ -20,11 +32,12 @@
         </p>
 
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input formControlName="rePassword" type="password" placeholder="Repeat Password" name="rePassword" id="rePassword" required>
-        <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.required"
-                class="error">Repeat Password is required!</p>
-            <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.rePasswordValidator"
-                class="error">Repeat Password does not match password!</p>
+        <input formControlName="rePassword" type="password" placeholder="Repeat Password" name="rePassword"
+            id="rePassword" required>
+        <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.required" class="error">Repeat
+            Password is required!</p>
+        <p *ngIf="form.get('rePassword').touched && form.get('rePassword').errors?.rePasswordValidator" class="error">
+            Repeat Password does not match password!</p>
         <hr>
 
         <p>By creating an account you agree to our Terms & Privacy.</p>

@@ -1,4 +1,49 @@
-<div class="new-theme-border">
+<form #f="ngForm" (ngSubmit)="submitHandler(f.value)">
+    <!-- <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div> -->
+
+    <div class="container">
+        <label for="themeName"><b>Meme URL</b></label>
+        <input #themeName="ngModel" type="image" name="themeName" id="themeName" ngModel required
+            pattern="/^(http:\/\/)?[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\-]+$/g">
+        <p *ngIf="themeName.touched && themeName.errors?.required" class="error">
+            URL is required!
+        </p>
+        <p *ngIf="themeName.touched && themeName.errors?.pattern" class="error">
+            URL is not valid!
+        </p>
+
+        <label for="postText"><b>Description</b></label>
+        <textarea #postText="ngModel" type="text" name="postText" id="postText" rows="8" class="height" ngModel required
+            minlength="10"></textarea>
+        <!-- <input #userPassword="ngModel" type="password" id="password" placeholder="Enter Password" name="psw" ngModel required minlength="4">
+        <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error">
+            Password is required!
+        </p>
+        <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error">
+            Password must be at least 4 characters!
+        </p>
+ 
+        <p *ngIf="errorMessage" class="error">
+            {{errorMessage}}
+        </p> -->
+        <button type="button" class="cancel" routerLink="/">Cancel</button>
+        <button class="public">Post</button>
+
+        <!-- <button [disabled]="isLoading || f.invalid">Login</button> -->
+        <!-- <app-loader [isLoading]="isLoading"></app-loader> -->
+        <!-- <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label> -->
+    </div>
+
+    <!-- <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div> -->
+</form>
+<!-- <div class="new-theme-border">
     <div class="header-background">
         <span>New Theme</span>
     </div>
@@ -30,4 +75,4 @@
         </div>
 
     </form>
-</div>
+</div> -->

@@ -1,85 +1,76 @@
-/* new-theme */
-
-.new-theme-border {
-    border: 1px solid;
-    border-radius: 1em;
-    width: 80%;
-    margin: auto;
-    margin-top: 2em;
-    padding: 1em;
-}
-
-.new-theme-border .input {
-    margin-bottom: 1em;
-}
-
-.header-background {
-    background-color: #4ebced;
-    border: 1px solid #4ebced;
-    padding: 1.5em;
-    padding-bottom: 0;
-    margin-bottom: 1em;
-    border-top-right-radius: 1em;
-    border-top-left-radius: 1em;
-}
-
-.header-background span {
-    background-color: #fff;
-    padding: 0.5em;
-    margin-top: 1em;
-    border-radius: 0.3em;
-}
-
-.title, .new-theme-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.new-theme-content {
-    min-height: 100%;
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
     width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.new-theme-content textarea {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
     width: 100%;
-    padding: 0.5em;
-    margin: 0;
-}
-
-.new-theme-content label {
-    margin-bottom: 0.3em;
-}
-
-.new-theme-title input {
-    width: 55%;
-    border-radius: 0.3em;
-    padding: 0.35em;
-}
-
-button+button {
-    margin-left: 1rem;
-}
-
-.new-theme-buttons {
-    margin-top: 1em;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .imgcontainer {
     text-align: center;
-}
-
-.new-theme-buttons button {
-    padding: 0.4em 1.5em;
-    border: 1px solid #333333;
-    border-radius: 0.3em;
-}
-
-p.error {
-    text-align: left;
-    border-radius: 0.3em;
-    color: red;
-    padding-top: 0;
-}
-
-.input-error {
-    border-left-color: red;
-}
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  p.error {
+    color: #ba3939;
+    background: #ffe0e0;
+    border: 1px solid #a33a3a;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
